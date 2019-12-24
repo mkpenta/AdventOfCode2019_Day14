@@ -1,6 +1,4 @@
 import math
-from typing import *
-
 
 def wordnumpair(l):
     k = l.strip(" ")
@@ -69,4 +67,29 @@ for r in reactions:
 
 compute(1,'FUEL')
 print(results)
-s
+print(excess)
+
+max = 1000000000000
+guess = max//results
+max = 2 * guess
+min = 0
+
+excess.clear()
+while min != max:
+    results = 0
+    compute(guess,'FUEL')
+    print(min, guess, max, results)
+    if results < 1000000000000:
+        min = guess
+        guess = min + (max - min)//2
+    else:
+        max = guess
+        guess = min+(max - min)//2
+
+
+
+
+
+
+
+
